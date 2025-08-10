@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Belajar Bahasa Jepang</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">BELAJAR AJA DULU</a>
+
+        <!-- Tombol hamburger (muncul di mobile) -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#mobileNav"
+          aria-controls="mobileNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menu normal di desktop -->
+        <div class="collapse navbar-collapse d-none d-lg-flex">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="materiDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Aksara jepang
+              </a>
+              <ul
+                class="dropdown-menu dropdown-menu-dark"
+                aria-labelledby="materiDropdown">
+                <li>
+                  <a class="dropdown-item" href="aksara-jepang.html"
+                    >Hiragana & Katakana</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="kanji.html">Kanji</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="kosakata.html">Kosakata</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Latihan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Offcanvas menu (muncul di mobile) -->
+    <div class="offcanvas offcanvas-end d-lg-none" tabindex="-1" id="mobileNav">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title fw-bold">Menu</h5>
+        <button
+          type="button"
+          class="btn-close text-reset"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="materiDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Aksara jepang
+            </a>
+            <ul
+              class="dropdown-menu dropdown-menu-dark"
+              aria-labelledby="materiDropdown">
+              <li>
+                <a class="dropdown-item" href="aksara-jepang.html"
+                  >Hiragana & Katakana</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="kanji.html">Kanji</a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="kosakata.html">Kosakata</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Latihan</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- navbar end -->
+  </body>
+</html>

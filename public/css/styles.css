@@ -1,0 +1,138 @@
+/* 
+color
+1. --bs-white: #fff; 
+2. --bs-primary: #0d6efd;
+3. --bs-cyan: #0dcaf0;
+*/
+/* 
+body {
+  height: 5050px;
+} */
+
+/* ========== navbar ========== */
+.navbar {
+  background-color: var(--bs-primary);
+  display: flex;
+}
+
+.navbar .container-fluid .navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--bs-white);
+}
+
+.navbar .container-fluid .navbar-toggler {
+  border: none;
+}
+
+.navbar .container-fluid .navbar-toggler:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--bs-primary);
+}
+
+.navbar .container-fluid .navbar-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar .container-fluid .collapse .navbar-nav .nav-item .nav-link {
+  font-size: 1.2rem;
+  color: var(--bs-white);
+  transition: color 0.3s ease;
+  margin: 0 0.2rem;
+}
+
+.navbar .container-fluid .collapse .navbar-nav .nav-item .nav-link:hover {
+  color: var(--bs-cyan);
+}
+
+/* Offcanvas menu (muncul di mobile) */
+
+.offcanvas {
+  background-color: #5f5f5f;
+}
+
+.offcanvas .offcanvas-header .offcanvas-title {
+  color: var(--bs-white);
+  font-size: 1.5rem;
+}
+
+.offcanvas .offcanvas-body .navbar-nav .nav-item .nav-link {
+  color: var(--bs-white);
+  font-size: 1.2rem;
+}
+
+.offcanvas .offcanvas-body .navbar-nav .nav-item .nav-link:hover {
+  color: #8b8b8b;
+}
+
+/* ========== navbar end ========== */
+
+/* ========== home section ========== */
+.home-section {
+  background: url("../asset/home-img.png") center/cover no-repeat;
+  min-height: 100vh;
+}
+/* ========== home section end ========== */
+
+/* ========== aksara-jepang.html ========== */
+.section-aksara-jepang {
+  margin-top: 3.5rem;
+}
+
+table td,
+table th {
+  font-size: 2rem;
+  vertical-align: middle;
+}
+
+/* ========== aksara-jepang.html end ========== */
+
+/* ========== kosakata.html ========== */
+
+/* Container utama kosakata */
+.container-kosakata {
+  margin-top: 4rem;
+  padding: 2rem;
+}
+
+/* Border penuh untuk tabel dark */
+.container-kosakata table,
+.container-kosakata th,
+.container-kosakata td {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Styling khusus kolom */
+.container-kosakata td.no {
+  text-align: center;
+}
+
+.container-kosakata td.kanji {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.container-kosakata td.kana {
+  font-style: italic;
+  font-size: 1.3rem;
+}
+
+.container-kosakata td.meaning {
+  font-size: 1.3rem;
+}
+
+/* Responsive font size kecil di mobile */
+@media (max-width: 768px) {
+  .container-kosakata table thead tr th {
+    font-size: 1.3rem;
+  }
+
+  .container-kosakata td.no,
+  .container-kosakata td.kanji,
+  .container-kosakata td.kana,
+  .container-kosakata td.meaning {
+    font-size: 1rem;
+  }
+}
+
+/* ========== kosakata.html end ========== */
