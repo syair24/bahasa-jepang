@@ -66,6 +66,7 @@ body {
 /* Offcanvas menu (muncul di mobile) */
 .offcanvas {
   background-color: var(--text-secondary);
+  width: 250px !important;
 }
 
 .offcanvas .offcanvas-header .offcanvas-title {
