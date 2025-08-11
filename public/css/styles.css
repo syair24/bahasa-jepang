@@ -1,24 +1,41 @@
-/* 
-color
-1. --bs-white: #fff; 
-2. --bs-primary: #0d6efd;
-3. --bs-cyan: #0dcaf0;
-*/
-/* 
-body {
-  height: 5050px;
-} */
+:root {
+  --green-primary: #2e7d32; /* hijau gelap */
+  --green-secondary: #66bb6a; /* hijau segar */
+  --green-accent: #f5fff6; /* hijau pastel */
+  --background-color: #f0f4f1; /* abu kehijauan sangat terang */
+  --text-primary: #1b3a17; /* hijau sangat gelap untuk teks */
+  --text-secondary: #4a7c3e; /* hijau sedang untuk teks sekunder */
+  --white: #fff;
+}
 
-/* ========== navbar ========== */
+body {
+  background-color: var(--green-accent);
+  background-image: radial-gradient(
+      circle,
+      rgba(0, 0, 0, 0.03) 1px,
+      transparent 1px
+    ),
+    radial-gradient(circle, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px, 10px 10px;
+  background-position: 0 0, 5px 5px;
+}
+
+/* ========== Navbar ========== */
 .navbar {
-  background-color: var(--bs-primary);
   display: flex;
+  background-color: var(--green-primary);
+  box-shadow: 0 5px 10px rgba(70, 70, 70, 0);
+  transition: box-shadow 0.2s ease;
+}
+
+.navbar.scrolled {
+  box-shadow: 0 5px 10px rgba(70, 70, 70, 0.5);
 }
 
 .navbar .container-fluid .navbar-brand {
   font-size: 1.5rem;
   font-weight: bold;
-  color: var(--bs-white);
+  color: var(--white);
 }
 
 .navbar .container-fluid .navbar-toggler {
@@ -27,7 +44,7 @@ body {
 
 .navbar .container-fluid .navbar-toggler:focus {
   outline: none;
-  box-shadow: 0 0 0 2px var(--bs-primary);
+  box-shadow: 0 0 0 2px var(--green-primary);
 }
 
 .navbar .container-fluid .navbar-toggler .navbar-toggler-icon {
@@ -36,92 +53,168 @@ body {
 
 .navbar .container-fluid .collapse .navbar-nav .nav-item .nav-link {
   font-size: 1.2rem;
-  color: var(--bs-white);
+  color: var(--white);
   transition: color 0.3s ease;
   margin: 0 0.2rem;
 }
 
 .navbar .container-fluid .collapse .navbar-nav .nav-item .nav-link:hover {
-  color: var(--bs-cyan);
+  color: var(--green-secondary);
 }
 
 /* Offcanvas menu (muncul di mobile) */
-
 .offcanvas {
-  background-color: #5f5f5f;
+  background-color: var(--text-secondary);
 }
 
 .offcanvas .offcanvas-header .offcanvas-title {
-  color: var(--bs-white);
+  color: var(--white);
   font-size: 1.5rem;
+  margin-left: 0.8rem;
 }
 
 .offcanvas .offcanvas-body .navbar-nav .nav-item .nav-link {
-  color: var(--bs-white);
+  color: var(--white);
   font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
 }
 
 .offcanvas .offcanvas-body .navbar-nav .nav-item .nav-link:hover {
-  color: #8b8b8b;
+  background-color: var(--text-primary);
 }
 
-/* ========== navbar end ========== */
+.offcanvas .offcanvas-body .navbar-nav .nav-item .nav-link:hover {
+  color: var(--green-secondary);
+}
 
-/* ========== home section ========== */
+/* ========== Home Section ========== */
 .home-section {
   background: url("../asset/home-img.png") center/cover no-repeat;
   min-height: 100vh;
-}
-/* ========== home section end ========== */
-
-/* ========== aksara-jepang.html ========== */
-.section-aksara-jepang {
-  margin-top: 3.5rem;
+  background-color: var(--background-color);
+  color: var(--text-primary);
 }
 
-table td,
-table th {
-  font-size: 2rem;
+.container-aksara-jepang {
+  scroll-margin-top: 3.5rem;
+  padding: 3rem 2rem 5rem 2rem;
+}
+
+.card-aksara {
+  box-shadow: none !important;
+}
+
+.card-scroll {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 12px; /* memberi ruang scroll bar */
+  -webkit-overflow-scrolling: touch; /* smooth scroll iOS */
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: var(--green-primary) transparent; /* Firefox */
+}
+
+/* Scrollbar Webkit (Chrome, Edge, Safari) */
+.card-scroll::-webkit-scrollbar {
+  height: 10px;
+  background: transparent;
+  border-radius: 10px;
+}
+
+.card-scroll::-webkit-scrollbar-thumb {
+  background-color: var(--green-primary);
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+  transition: background-color 0.3s ease;
+}
+
+.card-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: var(--green-secondary);
+}
+
+.card-scroll::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+.card-fixed {
+  min-width: 320px;
+  max-width: 350px;
+  flex-shrink: 0;
+  margin-right: 16px;
+  border-radius: 0.5rem;
+  background-color: var(--white);
+  box-shadow: none !important;
+}
+
+.table-bordered th,
+.table-bordered td {
+  border: 1px solid var(--green-primary);
   vertical-align: middle;
+  font-size: 1.3rem;
+  padding: 0.5rem;
+  white-space: nowrap;
 }
 
-/* ========== aksara-jepang.html end ========== */
-
-/* ========== kosakata.html ========== */
-
-/* Container utama kosakata */
-.container-kosakata {
-  margin-top: 4rem;
-  padding: 2rem;
+.table-success thead th {
+  background-color: var(--green-primary);
+  color: var(--white);
+  border-color: var(--green-secondary);
 }
 
-/* Border penuh untuk tabel dark */
-.container-kosakata table,
-.container-kosakata th,
-.container-kosakata td {
-  border: 1px solid rgba(255, 255, 255, 0.3);
+.table-warning thead th {
+  background-color: #ffeb3b;
+  color: #212529;
+  border-color: #fbc02d;
 }
 
-/* Styling khusus kolom */
-.container-kosakata td.no {
-  text-align: center;
+/* ========== card end  ========== */
+
+/* ========== tentang ========== */
+
+/* ===== Section About ===== */
+.about-section {
+  background-color: var(--text-secondary);
+  scroll-margin-top: 3rem;
+}
+.about-photo {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border: 5px solid var(--text-primary); /* hijau segar */
+  box-shadow: 0 0 15px rgba(102, 187, 106, 0.7);
+  transition: transform 0.3s ease;
 }
 
-.container-kosakata td.kanji {
-  font-size: 1.5rem;
-  font-weight: 700;
+.about-photo:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(102, 187, 106, 1);
 }
 
-.container-kosakata td.kana {
+/* ===== Text About ===== */
+.about-text {
+  color: var(--white);
+}
+
+.about-title {
+  color: var(--white); /* hijau segar */
+}
+
+.about-lead {
+  font-size: 1.25rem; /* ukuran lead */
+}
+
+.about-quote {
   font-style: italic;
-  font-size: 1.3rem;
 }
 
-.container-kosakata td.meaning {
-  font-size: 1.3rem;
-}
+/* ========== tentang end ========== */
 
-/* Responsive font size kecil di mobile */
+/* Responsive font size untuk mobile */
 @media (max-width: 768px) {
   .container-kosakata table thead tr th {
     font-size: 1.3rem;
@@ -134,5 +227,3 @@ table th {
     font-size: 1rem;
   }
 }
-
-/* ========== kosakata.html end ========== */
