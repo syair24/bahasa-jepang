@@ -21,6 +21,7 @@ body {
 }
 
 /* ========== Navbar ========== */
+/* navbar */
 .navbar {
   display: flex;
   background-color: var(--green-primary);
