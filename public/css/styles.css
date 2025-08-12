@@ -1,10 +1,10 @@
 :root {
-  --green-primary: #2e7d32; /* hijau gelap */
-  --green-secondary: #66bb6a; /* hijau segar */
-  --green-accent: #f5fff6; /* hijau pastel */
-  --background-color: #f0f4f1; /* abu kehijauan sangat terang */
-  --text-primary: #1b3a17; /* hijau sangat gelap untuk teks */
-  --text-secondary: #4a7c3e; /* hijau sedang untuk teks sekunder */
+  --green-primary: #2e7d32;
+  --green-secondary: #66bb6a;
+  --green-accent: #f5fff6;
+  --background-color: #f0f4f1;
+  --text-primary: #1b3a17;
+  --text-secondary: #4a7c3e;
   --white: #fff;
 }
 
@@ -62,7 +62,6 @@ body {
   color: var(--green-secondary);
 }
 
-/* Offcanvas menu (muncul di mobile) */
 .offcanvas {
   background-color: var(--text-secondary);
   width: 250px !important;
@@ -96,7 +95,12 @@ body {
 
 .container-aksara-jepang {
   scroll-margin-top: 3.5rem;
-  padding: 3rem 0 5rem 0;
+  background-color: var(--green-secondary);
+  padding: 3rem 1rem 0 1rem;
+}
+
+.container-aksara-jepang h2 {
+  color: var(--white);
 }
 
 /* ========== Card Scroll ========== */
@@ -107,42 +111,16 @@ body {
   overflow-x: auto;
   scroll-behavior: smooth;
   padding: 25px;
-  padding-bottom: 12px; /* memberi ruang scroll bar */
-  border-radius: 20px;
-  border: 5px solid var(--green-primary);
-  -webkit-overflow-scrolling: touch; /* smooth scroll iOS */
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE 10+ */
-  box-shadow: 0 0 20px var(--green-primary); /* bayangan ke dalam */
+  padding-bottom: 12px;
+  border-top: 2px solid var(--text-primary);
+  border-bottom: 2px solid var(--text-primary);
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-/* Hilangkan scrollbar Webkit */
 .card-scroll::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Edge */
-}
-
-/* Scrollbar Webkit (Chrome, Edge, Safari) */
-.card-scroll::-webkit-scrollbar {
-  height: 10px;
-  background: transparent;
-  border-radius: 10px;
-}
-
-.card-scroll::-webkit-scrollbar-thumb {
-  background-color: var(--green-primary);
-  border-radius: 10px;
-  border: 2px solid transparent;
-  background-clip: content-box;
-  transition: background-color 0.3s ease;
-}
-
-.card-scroll::-webkit-scrollbar-thumb:hover {
-  background-color: var(--green-secondary);
-}
-
-.card-scroll::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.05);
-  border-radius: 10px;
+  display: none;
 }
 
 /* ========== Card Fixed ========== */
@@ -151,7 +129,6 @@ body {
   max-width: 350px;
   flex-shrink: 0;
   margin-right: 16px;
-  border-radius: 0.5rem;
   background-color: var(--white);
   box-shadow: none !important;
 }
@@ -180,14 +157,11 @@ body {
 }
 
 /* ========== kosakata ========== */
-
-/* Section pembungkus */
 .kosakata-section {
   padding: 3rem;
   background-color: var(--green-secondary);
-  scroll-margin-top: 80px;
+  scroll-margin-top: 50px;
   margin: 0 auto 2.5rem auto;
-  border-radius: 20px;
   overflow-x: hidden;
 }
 
@@ -198,16 +172,14 @@ body {
   text-shadow: 0 0 10px var(--white);
 }
 
-/* Pembungkus tabel agar bisa scroll di layar kecil */
 .table-responsive-scroll {
   width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin; /* Firefox */
-  scrollbar-color: var(--text-primary) transparent; /* Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: var(--text-primary) transparent;
 }
 
-/* Scrollbar Webkit (Chrome, Edge, Safari) */
 .table-responsive-scroll::-webkit-scrollbar {
   height: 8px;
 }
@@ -223,7 +195,6 @@ body {
   background-clip: content-box;
 }
 
-/* Tabel */
 .kosakata-table {
   min-width: 700px;
   width: 100%;
@@ -233,7 +204,6 @@ body {
   background-color: var(--white);
 }
 
-/* Header */
 .kosakata-table thead {
   background-color: var(--text-secondary);
   color: var(--white);
@@ -251,28 +221,24 @@ body {
   user-select: none;
 }
 
-/* Baris body - ganjil */
 .kosakata-table tbody tr:nth-child(odd) {
   background-color: #e6f0d4;
   color: var(--text-primary);
   transition: background-color 0.3s ease;
 }
 
-/* Baris body - genap */
 .kosakata-table tbody tr:nth-child(even) {
   background-color: #cde6b1;
   color: var(--text-primary);
   transition: background-color 0.3s ease;
 }
 
-/* Hover baris */
 .kosakata-table tbody tr:hover {
   background-color: var(--text-secondary);
   color: #fff;
   cursor: pointer;
 }
 
-/* Sel di body */
 .kosakata-table tbody td {
   padding: 1rem 1.5rem;
   vertical-align: middle;
@@ -280,25 +246,21 @@ body {
   font-size: 1.1rem;
 }
 
-/* Kolom nomor urut */
 .kosakata-table tbody td:nth-child(1) {
   font-weight: bold;
 }
 
-/* Kolom kanji */
 .kosakata-table tbody td.kanji {
   font-size: 2rem;
   font-weight: bold;
   color: inherit;
 }
 
-/* Kolom kana */
 .kosakata-table tbody td.kana {
   font-style: italic;
   color: inherit;
 }
 
-/* Kolom arti */
 .kosakata-table tbody td.arti {
   font-weight: 500;
   color: inherit;
@@ -316,7 +278,7 @@ body {
   width: 200px;
   height: 200px;
   object-fit: cover;
-  border: 5px solid var(--text-primary); /* hijau segar */
+  border: 5px solid var(--text-primary);
   box-shadow: 0 0 15px rgba(102, 187, 106, 0.7);
   transition: transform 0.3s ease;
 }
@@ -331,7 +293,7 @@ body {
 }
 
 .about-title {
-  color: var(--white); /* hijau segar */
+  color: var(--white);
 }
 
 .about-lead {
@@ -356,7 +318,6 @@ body {
   }
 
   /* ========== kosakata ========== */
-
   .kosakata-section {
     padding: 1rem;
   }
@@ -374,13 +335,11 @@ body {
     padding: 1rem;
   }
 
-  /* Sel di body */
   .kosakata-table tbody td {
     padding: 1rem;
     font-size: 1rem;
   }
 
-  /* Kolom kanji */
   .kosakata-table tbody td.kanji {
     font-size: 1.5rem;
   }
