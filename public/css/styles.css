@@ -21,7 +21,6 @@ body {
 }
 
 /* ========== Navbar ========== */
-/* navbar */
 .navbar {
   display: flex;
   background-color: var(--green-primary);
@@ -84,9 +83,6 @@ body {
 
 .offcanvas .offcanvas-body .navbar-nav .nav-item .nav-link:hover {
   background-color: var(--text-primary);
-}
-
-.offcanvas .offcanvas-body .navbar-nav .nav-item .nav-link:hover {
   color: var(--green-secondary);
 }
 
@@ -100,23 +96,29 @@ body {
 
 .container-aksara-jepang {
   scroll-margin-top: 3.5rem;
-  padding: 3rem 10px 5rem 10px;
+  padding: 3rem 0 5rem 0;
 }
 
-.card-aksara {
-  box-shadow: none !important;
-}
-
+/* ========== Card Scroll ========== */
 .card-scroll {
   display: flex;
   flex-direction: row;
   gap: 1rem;
   overflow-x: auto;
   scroll-behavior: smooth;
+  padding: 25px;
   padding-bottom: 12px; /* memberi ruang scroll bar */
+  border-radius: 20px;
+  border: 5px solid var(--green-primary);
   -webkit-overflow-scrolling: touch; /* smooth scroll iOS */
-  scrollbar-width: thin; /* Firefox */
-  scrollbar-color: var(--green-primary) transparent; /* Firefox */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+  box-shadow: 0 0 20px var(--green-primary); /* bayangan ke dalam */
+}
+
+/* Hilangkan scrollbar Webkit */
+.card-scroll::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
 }
 
 /* Scrollbar Webkit (Chrome, Edge, Safari) */
@@ -143,6 +145,7 @@ body {
   border-radius: 10px;
 }
 
+/* ========== Card Fixed ========== */
 .card-fixed {
   min-width: 320px;
   max-width: 350px;
@@ -153,6 +156,7 @@ body {
   box-shadow: none !important;
 }
 
+/* ========== Table Styles ========== */
 .table-bordered th,
 .table-bordered td {
   border: 1px solid var(--green-primary);
@@ -165,6 +169,7 @@ body {
 .table-success thead th {
   background-color: var(--green-primary);
   color: var(--white);
+  padding: 20px;
   border-color: var(--green-secondary);
 }
 
@@ -174,15 +179,139 @@ body {
   border-color: #fbc02d;
 }
 
-/* ========== card end  ========== */
+/* ========== kosakata ========== */
 
-/* ========== tentang ========== */
+/* Section pembungkus */
+.kosakata-section {
+  padding: 3rem;
+  background-color: var(--green-secondary);
+  scroll-margin-top: 80px;
+  margin: 0 auto 2.5rem auto;
+  border-radius: 20px;
+  overflow-x: hidden;
+}
 
-/* ===== Section About ===== */
+.kosakata-section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--white);
+  text-shadow: 0 0 10px var(--white);
+}
+
+/* Pembungkus tabel agar bisa scroll di layar kecil */
+.table-responsive-scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: var(--text-primary) transparent; /* Firefox */
+}
+
+/* Scrollbar Webkit (Chrome, Edge, Safari) */
+.table-responsive-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table-responsive-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.table-responsive-scroll::-webkit-scrollbar-thumb {
+  background-color: var(--text-primary);
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+/* Tabel */
+.kosakata-table {
+  min-width: 700px;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 0.75rem;
+  overflow: hidden;
+  background-color: var(--white);
+}
+
+/* Header */
+.kosakata-table thead {
+  background-color: var(--text-secondary);
+  color: var(--white);
+}
+
+.kosakata-table thead tr {
+  height: 50px;
+}
+
+.kosakata-table thead th {
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 1rem 1.5rem;
+  user-select: none;
+}
+
+/* Baris body - ganjil */
+.kosakata-table tbody tr:nth-child(odd) {
+  background-color: #e6f0d4;
+  color: var(--text-primary);
+  transition: background-color 0.3s ease;
+}
+
+/* Baris body - genap */
+.kosakata-table tbody tr:nth-child(even) {
+  background-color: #cde6b1;
+  color: var(--text-primary);
+  transition: background-color 0.3s ease;
+}
+
+/* Hover baris */
+.kosakata-table tbody tr:hover {
+  background-color: var(--text-secondary);
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Sel di body */
+.kosakata-table tbody td {
+  padding: 1rem 1.5rem;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+/* Kolom nomor urut */
+.kosakata-table tbody td:nth-child(1) {
+  font-weight: bold;
+}
+
+/* Kolom kanji */
+.kosakata-table tbody td.kanji {
+  font-size: 2rem;
+  font-weight: bold;
+  color: inherit;
+}
+
+/* Kolom kana */
+.kosakata-table tbody td.kana {
+  font-style: italic;
+  color: inherit;
+}
+
+/* Kolom arti */
+.kosakata-table tbody td.arti {
+  font-weight: 500;
+  color: inherit;
+}
+
+/* ========== kosakata end ========== */
+
+/* ========== Tentang Section ========== */
 .about-section {
   background-color: var(--text-secondary);
   scroll-margin-top: 3rem;
 }
+
 .about-photo {
   width: 200px;
   height: 200px;
@@ -197,7 +326,6 @@ body {
   box-shadow: 0 0 25px rgba(102, 187, 106, 1);
 }
 
-/* ===== Text About ===== */
 .about-text {
   color: var(--white);
 }
@@ -207,16 +335,14 @@ body {
 }
 
 .about-lead {
-  font-size: 1.25rem; /* ukuran lead */
+  font-size: 1.25rem;
 }
 
 .about-quote {
   font-style: italic;
 }
 
-/* ========== tentang end ========== */
-
-/* Responsive font size untuk mobile */
+/* ========== Responsive ========== */
 @media (max-width: 768px) {
   .container-kosakata table thead tr th {
     font-size: 1.3rem;
@@ -228,4 +354,36 @@ body {
   .container-kosakata td.meaning {
     font-size: 1rem;
   }
+
+  /* ========== kosakata ========== */
+
+  .kosakata-section {
+    padding: 1rem;
+  }
+
+  .kosakata-section h2 {
+    margin-bottom: 1rem;
+  }
+
+  .kosakata-table thead tr {
+    height: 30px;
+  }
+
+  .kosakata-table thead th {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+
+  /* Sel di body */
+  .kosakata-table tbody td {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  /* Kolom kanji */
+  .kosakata-table tbody td.kanji {
+    font-size: 1.5rem;
+  }
+
+  /* ========== kosakata end ========== */
 }
